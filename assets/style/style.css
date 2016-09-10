@@ -1,0 +1,18 @@
+
+
+.container{
+	background-image: url(../images/food.png);
+}
+#foodButtons{
+	padding-top: 18px;
+}
+#food-form{
+	padding: 33px 200px;
+}
+#food{
+	position: relative;
+    bottom: 25px;
+    display: inline-block;
+    margin: 22px;
+    float: left;
+}

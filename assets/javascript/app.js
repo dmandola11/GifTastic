@@ -4,8 +4,9 @@ $(document).ready(function() {
         "cheese", "sushi", "bread", "gelato", "sandwich"
     ];
 
-
+	
     function addButtons() {
+        $('#foodButtons').empty();
         //loop that runs through the array 
         for (var i = 0; i < food.length; i++) {
 
@@ -21,17 +22,8 @@ $(document).ready(function() {
 
         };
 
-        //trying to add buttons from user input
-        $('#addFood').on('click', function() {
-            var search = $('#food-input').val().trim();
-            console.log(search);
-
-            // I wanted to add to the array using food.push(search) but couldn't get it to work. I created buttons instead 
-            //from the input button
-            var searchButton = $('<button type ="button" class="button" data-name=' + search + '>' + search + '</button>');
-            $('#foodButtons').append(searchButton);
-            return false;
-        });
+        
+        
         //function to get JSON object from Giphy API 
         $(".button").on('click', function() {
             var foodGif = $(this).data('name');
@@ -90,7 +82,19 @@ $(document).ready(function() {
                     });
 
                 });
-
+//trying to add buttons from user input
+        $('#addFood').on('click', function() {
+            var search = $('#food-input').val().trim();
+            console.log(search);
+            food.push(search);
+            // I wanted to add to the array using food.push(search) but couldn't get it to work. I created buttons instead 
+            //from the input button
+            //var searchButton = $('<button type ="button" class="button" data-name=' + search + '>' + search + '</button>');
+            //$('#foodButtons').append(searchButton);
+            
+            addButtons();
+            return false;   
+        });
         });
     };
 
