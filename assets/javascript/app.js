@@ -1,9 +1,17 @@
 $(document).ready(function() {
     //array of strings used to create buttons and their data
-    var food = ["pizza", "cheeseburger", "cereal", "bacon", "cupcake", "fries", "pasta",
-        "cheese", "sushi", "bread", "gelato", "sandwich"
+    var food = ["pizza", "bananas", "cheeseburger", "cereal", "bacon", "cupcake", "fries", "pasta",
+        "cheese", "sushi", "bread", "gelato", "sandwich", "steak", "pie", "apples", "nachos"
     ];
-
+//trying to add buttons from user input
+        $('#addFood').on('click', function() {
+            var search = $('#food-input').val().trim();
+            console.log(search);
+            food.push(search);
+            
+            event.preventDefault();  
+            addButtons(); 
+        });
 	
     function addButtons() {
         $('#foodButtons').empty();
@@ -11,7 +19,7 @@ $(document).ready(function() {
         for (var i = 0; i < food.length; i++) {
 
             //creates buttons for each index of array
-            var displayButtons = $('<button type ="button" class="button">' + food[i] + '</button>');
+            var displayButtons = $('<button type ="button" class="button btn btn-info btn-sm">' + food[i] + '</button>');
 
             //sets data-name to the index of aray
             displayButtons.attr('data-name', food[i]);
@@ -82,19 +90,7 @@ $(document).ready(function() {
                     });
 
                 });
-//trying to add buttons from user input
-        $('#addFood').on('click', function() {
-            var search = $('#food-input').val().trim();
-            console.log(search);
-            food.push(search);
-            // I wanted to add to the array using food.push(search) but couldn't get it to work. I created buttons instead 
-            //from the input button
-            //var searchButton = $('<button type ="button" class="button" data-name=' + search + '>' + search + '</button>');
-            //$('#foodButtons').append(searchButton);
-            
-            addButtons();
-            return false;   
-        });
+		
         });
     };
 

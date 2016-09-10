@@ -8,6 +8,8 @@
 }
 #food-form{
 	padding: 33px 200px;
+    position: relative;
+    left: 158px;
 }
 #food{
 	position: relative;
@@ -15,4 +17,7 @@
     display: inline-block;
     margin: 22px;
     float: left;
+}
+.btn-sm{
+	margin: 4px;
 }
