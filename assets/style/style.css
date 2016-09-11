@@ -18,10 +18,8 @@ body{
 }
 #food{
 	position: relative;
-    bottom: 25px;
-    display: inline-block;
-    margin: 22px;
-    float: left;
+    width: 1000px;
+    left: 73px;
 }
 .btn-sm{
 	margin: 4px;
@@ -38,3 +36,8 @@ label {
     background-color: #5bc0de;
     padding: 0px 10px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+img{
+	float: left;
+	margin-right: 45px;
+}
